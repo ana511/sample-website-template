@@ -1,0 +1,312 @@
+/*
+
+Template: NinjaDojo Website Template
+Version: 1.0
+Design and Developed by: Ana
+
+==================================================
+[  Table of contents  ]
+==================================================
+ 
+:: General
+:: Header
+:: Hero
+:: Products
+:: Contact
+:: Footer
+
+==================================================
+[ End table content ]
+==================================================
+*/
+
+@primary-color : #dd7884;
+@gap : 60px;
+@primary-font : 'Roboto';
+@secondary-font : 'Noto Sans';
+
+
+/*************************************************
+    General
+*************************************************/
+
+*{
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+}
+
+html, body{
+	width : 100%;
+}
+
+body{
+	font-family : @primary-font, Arial, sans-serif;
+	font-size : 13pt;
+	color : #252525;
+}
+
+a{
+	text-decoration : none;
+	color : black;
+}
+
+.heading{
+	color : @primary-color;
+	font-size : 20pt;
+}
+
+.button{
+	padding : 5px 40px;
+	border : 2px solid white;
+	border-radius : 5px;
+	font-weight : 700;
+	letter-spacing : 0.3px;
+
+	&:hover{
+		outline : 2px solid black;
+		color : black;
+		border : 2px solid transparent;
+	}
+}
+
+section{
+	padding : @gap;
+}
+
+section .heading{
+	color : #dd7884;
+	text-transform: capitalize;
+	margin-bottom : @gap / 2;
+}
+
+section .button{
+	color : @primary-color;
+	margin-top : @gap / 2;
+	border : 1px solid @primary-color;
+
+	&:hover{ border : 1px solid transparent; }
+}
+
+.content{
+	font-size : 13pt;
+	line-height : 1.2;
+	letter-spacing : -0.5px;
+}
+
+/*************************************************
+    Header
+*************************************************/
+
+header{
+	display : flex;
+	flex-wrap : wrap;
+	justify-content: space-between;
+	font-weight : bold;
+	position : relative;
+	z-index:1;
+	box-shadow : 0 1px 3px 1px rgba(0, 0, 0, 0.2);
+	padding : 30px @gap;
+
+	.menu{
+		display : flex;
+		flex-wrap : wrap;
+		align-items: center;
+		justify-content: space-between;
+		width : 333px;
+		max-width : 333px;
+
+		.hamburger{ display : none; }
+
+		a{
+			font-size : 15pt;
+			font-weight : 700;
+
+			&:hover{
+				border-bottom : 2px solid black;
+				margin-bottom : -2px;
+			}
+		}
+	}
+}
+
+/*************************************************
+    Hero
+*************************************************/
+
+.hero{
+	background: linear-gradient(115deg, #bc7efe, #fbb831 90%);
+	position : relative;
+	padding-bottom : 10px;
+
+	.intro{
+		min-height : 100vh;
+		display : flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color : white;
+
+		h1{font-size : 45pt;}
+
+		h2{font-size : 30pt;}
+
+		div{
+			margin-top : @gap / 2;
+			width : 363px;
+			max-width: 100%;
+	    display: flex;
+	    flex-wrap : wrap;
+	    justify-content: space-between;
+
+			.button{
+				color : white;
+
+				&:first-child{
+					background-color : white;
+					color : #da728f;
+				}
+			}
+		}
+	}
+
+	.about{
+		background-color : white;
+		padding : @gap;
+
+		blockquote{
+			column-count : 2;
+			column-gap : 135px;
+		}
+	}
+}
+
+
+/*************************************************
+    Products
+*************************************************/
+
+.products{
+	> div{
+		display : flex;
+		flex-wrap : wrap;
+
+		.view, .description{
+			min-width : 280px;
+		}
+
+		.view{
+			width : 65%;
+			img{ width : 100%;}
+		}
+
+		.description{
+			width : 35%;
+			display : flex;
+			flex-direction: column;
+
+			.button{ align-self : center; }
+		}
+	}
+
+	.one{
+		padding-bottom : @gap / 2;
+
+		.description{ padding-left : @gap; }
+	}
+
+	.two{
+		padding-top : @gap / 2;
+
+		.view{ order : 2; }
+
+		.description{
+			order : 1;
+			padding-right : @gap;
+		}
+	}
+}
+
+/*************************************************
+    Contact
+*************************************************/
+
+.contact{
+	border-top : 1px solid #eee;
+	border-bottom : 1px solid #eee;
+	background-color : #f8f8f8;
+	display : flex;
+	justify-content: center;
+	align-items: center;
+
+	div{
+		background-color : white;
+    padding: 44px 65px;
+		border : 1px solid #ccc;
+		border-radius : 2%;
+		box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
+
+		h3{ text-align: center; }
+
+		form{
+			display : flex;
+			flex-direction: column;
+			align-items: center;
+
+			input, textarea, a{
+				margin : 10px 0;
+			}
+
+			input, textarea{
+				width : 100%;
+				border : 1px solid #ccc;
+				border-radius : 4%;
+				color : #aaa;
+				padding : 3px 7px;
+				font-family: @primary-font;
+				font-size : 11pt;
+			}
+			
+			button{
+				background-color : @primary-color;
+				color : white;
+				align-self: flex-end;
+				font-weight : 700;
+				font-size : 13pt;
+			}
+		}
+	}
+}
+
+/*************************************************
+    Footer
+*************************************************/
+
+footer{
+	padding : 30px @gap;
+	display : flex;
+	flex-wrap : wrap;
+
+	.brand{
+		font-weight : 700;
+	}
+
+	> div{
+		display : flex;
+		flex-grow : 1;
+		min-width : 260px;
+	}
+
+	> div:last-child{
+		flex-wrap : wrap;
+
+		address, div{
+			min-width : 260px;
+			flex-grow : 1;
+		}
+
+		address, span{ line-height : 1.5; }
+		address{ font-style : normal; }
+		span{ display : block; }
+	}
+}
